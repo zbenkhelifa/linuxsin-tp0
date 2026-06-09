@@ -1,7 +1,12 @@
 # 📊 TP0 — Mise en route
 
-> Mis à jour le 09/06/2026 à 21:59 (UTC)
+![Score](https://img.shields.io/badge/0-non%20commencé-lightgrey?style=flat-square)
+
+> Mis à jour le 09/06/2026 à 22:09 (UTC)
 
 **Score :** non commencé
 
-
+```
+tp0.sh: line 23: syntax error near unexpected token `}'
+tp0.sh: line 23: `}'
+```
