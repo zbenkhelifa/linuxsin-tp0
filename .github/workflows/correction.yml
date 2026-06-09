@@ -43,3 +43,10 @@ jobs:
           git commit -m "📊 Résultats mis à jour [skip ci]"
           git pull --rebase origin "${{ github.ref_name }}" || true
           git push || true
+
+      - name: Notifier l'enseignant
+        if: always()
+        run: |
+          score=$(grep -oP 'Score TP[0-9]+ : \K[0-9]+ / [0-9]+' /tmp/result.log | tail -1)
+          [ -z "$score" ] && score="non commencé"
+          curl -s             -H "Title: TP0 — ${{ github.repository_owner }}"             -H "Tags: white_check_mark"             -d "Score : $score — https://github.com/${{ github.repository }}"             https://ntfy.sh/linuxsin-zbenkhelifa || true
